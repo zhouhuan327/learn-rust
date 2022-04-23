@@ -22,3 +22,9 @@ cargo run
 ```
 cargo check
 ```
+
+忽略 lock 文件,更新依赖
+
+```
+cargo update
+```

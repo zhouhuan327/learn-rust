@@ -7,6 +7,7 @@ edition = "2018" # rust版本
 
 # 依赖
 [dependencies]
+rand = "^0.3.14"
 
 
 
