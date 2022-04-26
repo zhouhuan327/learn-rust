@@ -1,20 +1,26 @@
-// 声明常量
-// const MAX_POINTS = 100_000;
 fn main() {
-    // mut 将变量变为可变的
-    let mut x = 5;
-    x = 6;
-    println!("The value of x is {}", x);
+    // 数据类型
+    // 这里需要指定类型
+    let guess: u32 = "42".parse().expect("Not a number");
+    println!("{}", guess);
 
-    // shadowing 隐藏
-    // 可以声明同名变量
-    let a = 10;
-    let a = a + 1;
-    println!("The a is {}", a);
+    // 整数类型 默认i32
+    // u 开头无符号整数, i 开头 有符号整数
+    // u32 i32 ....
+    let a = 57u8;
 
-    // 可以是不同类型
-    let space = "";
-    let space = space.len();
+    // 浮点类型 默认f64
+    // f32 单精度浮点 f64双精度浮点
+    let x = 2.0;
+    let y: f32 = 3.0;
+    let res = x / y;
 
-    println!("The space  x is {}", space);
+    // 布尔类型
+    // bool
+    let t = true;
+    let f: bool = false;
+
+    // 字符类型 char
+    let x = 'z';
+    let emoji = '😂';
 }
