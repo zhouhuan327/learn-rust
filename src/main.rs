@@ -1,36 +1,33 @@
-fn main() {
-    // slice 不持有所有权
-    let s = String::from("Hello World");
-
-    // 起始位置..终止位置+1
-    let hello = &s[0..5];
-    let world = &s[6..11];
-
-    println!("{},{}", hello, world);
-
-    println!("{},{}", &s[..5], &s[6..]);
-
-    let whole = &s[..];
-
-    println!("{}", whole);
-
-    // 字符串切片
-    let my_string_literal = "Hello Word";
-    println!("first world, 把string转成切片: {}", first_words(&s[..]));
-    println!("first world: {}", first_words(my_string_literal));
-
-    // 数组切片
-    let a = [1, 2, 3, 4, 5];
-    let slice = &a[1..3];
-    println!("array slice {:#?}", slice);
+struct User {
+    name: String,
+    email: String,
 }
+fn main() {
+    // mut之后所有字段都是可变了的
+    let mut user1 = User {
+        name: String::from("sean"),
+        email: String::from("xx"),
+    };
 
-fn first_words(s: &str) -> &str {
-    let bytes = s.as_bytes();
-    for (i, &item) in bytes.iter().enumerate() {
-        if item == b' ' {
-            return &s[..i];
-        }
-    }
-    return &s[..];
+    user1.email = String::from("xxxx update");
+    let name = String::from("sean");
+
+    let user2 = User {
+        name, // 简写 和js一样
+        email: String::from("xx"),
+    };
+
+    // struct更新语法,基于现有实例创建新的实例
+    // 和js一样
+    let user3 = User {
+        name: String::from("sean"),
+        ..user2
+    };
+
+    // tuple struct
+    // 整体有个名,元素没有名
+    struct Color(i32, i32, i32);
+    struct Point(i32, i32, i32);
+    let balck = Color(0, 0, 0);
+    let point = Point(0, 0, 0);
 }
