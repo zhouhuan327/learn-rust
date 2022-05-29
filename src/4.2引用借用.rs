@@ -11,7 +11,7 @@ fn main() {
     let mut s2 = String::from("hello");
     calc_Len2(&mut s2);
 
-    // 可变引用在一个作用域内只能有一个,可以避免数据竞争
+    //! 可变引用在一个作用域内只能有一个,可以避免数据竞争
     // let yinyong1 = &mut s2;
     // let yinyong2 = &mut s2; // 报错
     // calc_Len2(yinyong1);
